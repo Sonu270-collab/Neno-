@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Neon Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.9));
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 70px;
+    filter: drop-shadow(0 0 15px #ff00ff);
+    animation: neonPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+    0%, 100% { transform: scale(1); filter: brightness(100%); }
+    50% { transform: scale(1.1); filter: brightness(150%); }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul li a i {
+    font-size: 1.3rem;
+}
+
+nav ul li a:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 0 15px #00ffcc, 0 0 25px #ff00ff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ffcc, #ff00ff);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0a0a0a, #1c2526);
+    position: relative;
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.3), rgba(255, 0, 255, 0.2), transparent);
+    animation: rotateGlow 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff, #ffff00, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideIn 1.5s ease-out;
+    text-shadow: 0 0 20px rgba(0, 255, 204, 0.8), 0 0 40px rgba(255, 0, 255, 0.8), 0 0 60px rgba(255, 255, 0, 0.8);
+}
+
+.hero-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #e0e0e0;
+    animation: slideIn 2s ease-out;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
+    color: #0a0a0a;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.7);
+    background: linear-gradient(45deg, #ff00ff, #00ffcc);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Welcome Section */
+#about {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #1c2526, #0a0a0a);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.2), rgba(255, 0, 255, 0.1), transparent);
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-out;
+}
+
+#about p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: slideIn 2s ease-out;
+}
+
+/* Skills Section */
+#services {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #0a0a0a, #1c2526);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#services::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2), rgba(0, 255, 204, 0.1), transparent);
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+}
+
+#services h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff00ff, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+    margin-bottom: 40px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1.8s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffcc;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7), 0 0 40px rgba(255, 0, 255, 0.5);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Unique colors for each skill */
+.skill-card:nth-child(1) i, .skill-card:nth-child(1) h3 {
+    background: linear-gradient(45deg, #ff6600, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #ff6600;
+}
+
+.skill-card:nth-child(2) i, .skill-card:nth-child(2) h3 {
+    background: linear-gradient(45deg, #0066ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #0066ff;
+}
+
+.skill-card:nth-child(3) i, .skill-card:nth-child(3) h3 {
+    background: linear-gradient(45deg, #ffff00, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+.skill-card:nth-child(4) i, .skill-card:nth-child(4) h3 {
+    background: linear-gradient(45deg, #9900ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #9900ff;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Projects Section */
+#projects {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #1c2526, #0a0a0a);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.2), rgba(255, 0, 255, 0.1), transparent);
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+}
+
+#projects h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+    margin-bottom: 40px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: slideIn 1.8s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7), 0 0 40px rgba(255, 0, 255, 0.7);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover img {
+    filter: brightness(120%);
+}
+
+.project-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Unique colors for each project */
+.project-card:nth-child(1) h3 {
+    background: linear-gradient(45deg, #00ffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.project-card:nth-child(2) h3 {
+    background: linear-gradient(45deg, #ff00ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.project-card:nth-child(3) h3 {
+    background: linear-gradient(45deg, #00ff00, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.project-card:nth-child(4) h3 {
+    background: linear-gradient(45deg, #ffff00, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #0a0a0a, #1c2526);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonials::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.2), rgba(255, 0, 255, 0.1), transparent);
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+}
+
+#testimonials h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+    margin-bottom: 40px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: slideIn 1.8s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffcc;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7), 0 0 40px rgba(255, 0, 255, 0.7);
+}
+
+.testimonial-card .stars {
+    margin-bottom: 15px;
+}
+
+.testimonial-card .stars i {
+    font-size: 1.2rem;
+}
+
+.testimonial-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+}
+
+/* Unique colors for each testimonial */
+.testimonial-card:nth-child(1) .stars i, .testimonial-card:nth-child(1) h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.testimonial-card:nth-child(2) .stars i, .testimonial-card:nth-child(2) h3 {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.testimonial-card:nth-child(3) .stars i, .testimonial-card:nth-child(3) h3 {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.testimonial-card:nth-child(4) .stars i, .testimonial-card:nth-child(4) h3 {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #1c2526, #0a0a0a);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2), rgba(0, 255, 204, 0.1), transparent);
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+}
+
+#contact h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+/* Footer Section */
+footer {
+    padding: 40px 5%;
+    background: linear-gradient(180deg, #0a0a0a, #1c2526);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid #00ffcc;
+    box-shadow: 0 -5px 20px rgba(0, 255, 204, 0.5);
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.3), rgba(0, 255, 204, 0.2), transparent);
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-contact h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+    margin-bottom: 15px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.footer-contact p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin: 5px 0;
+    animation: slideIn 1.8s ease-out;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: slideIn 2s ease-out;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    filter: brightness(150%);
+}
+
+/* Unique colors for social icons */
+.social-icons a:nth-child(1) {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.social-icons a:nth-child(2) {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.social-icons a:nth-child(3) {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.social-icons a:nth-child(4) {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    animation: fadeInUp 2.2s ease-out;
+}
+
+.footer-bottom span {
+    background: linear-gradient(45deg, #00ffcc, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
+
+/* Glow animation for social icons */
+@keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor; }
+    50% { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+}
+
+.social-icons a {
+    animation: glowPulse 2s infinite ease-in-out;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #00ffcc;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 20, 0.95));
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    #about {
+        padding: 40px 5%;
+    }
+
+    #about h2 {
+        font-size: 1.8rem;
+    }
+
+    #about p {
+        font-size: 0.95rem;
+        max-width: 90%;
+    }
+
+    #services {
+        padding: 40px 5%;
+    }
+
+    #services h2 {
+        font-size: 1.8rem;
+    }
+
+    .skill-card {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .skill-card i {
+        font-size: 2.5rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.2rem;
+    }
+
+    #projects {
+        padding: 40px 5%;
+    }
+
+    #projects h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-card img {
+        height: 120px;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
+    #testimonials {
+        padding: 40px 5%;
+    }
+
+    #testimonials h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-card {
+        padding: 15px;
+    }
+
+    .testimonial-card p {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .testimonial-card .stars i {
+        font-size: 1rem;
+    }
+
+    #contact {
+        padding: 40px 5%;
+    }
+
+    #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    #contact p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 30px 5%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-contact p {
+        font-size: 0.9rem;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #about h2 {
+        font-size: 1.5rem;
+    }
+
+    #about p {
+        font-size: 0.85rem;
+    }
+
+    #services h2 {
+        font-size: 1.5rem;
+    }
+
+    .skill-card {
+        width: 120px;
+    }
+
+    .skill-card i {
+        font-size: 2rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1rem;
+    }
+
+    #projects h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-card img {
+        height: 100px;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-card p {
+        font-size: 0.8rem;
+    }
+
+    #testimonials h2 {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-card p {
+        font-size: 0.8rem;
+    }
+
+    .testimonial-card h3 {
+        font-size: 1rem;
+    }
+
+    .testimonial-card .stars i {
+        font-size: 0.9rem;
+    }
+
+    #contact h2 {
+        font-size: 1.5rem;
+    }
+
+    #contact p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 20px 5%;
+    }
+
+    .footer-contact h3 {
+      
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Replace with your logo image path -->
+            <img src="https://via.placeholder.com/70" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#services"><i class="fas fa-cog"></i> Services</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Explore the Neon Future</h1>
+            <p>Dive into a world of vibrant innovation and cutting-edge technology</p>
+            <a href="#explore" class="cta-button">Discover Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="welcome-section">
+        <h2>Blast Off to Awesome!</h2>
+        <p>
+            Welcome to the wildest ride in the digital cosmos! We're here to sling you into a neon-charged future where tech is your trusty spaceship and innovation is the fuel. Buckle up, because we're about to zoom through a galaxy of mind-blowing ideas! Our crew of tech wizards is cooking up solutions so cool, they’d make a robot blush. From snazzy apps to interfaces that pop, we’ve got the tools to turn your dreams into reality—faster than you can say "warp speed." Whether you’re a coder, a dreamer, or just here for the vibes, we’re your launchpad to epicness. No boring stuff here—just pure, unfiltered creativity with a side of giggles. Join our squad, grab a glowing idea, and let’s make the universe jealous of our swagger. Ready to shine brighter than a supernova? Let’s do this—together, we’ll conquer the future, one neon pixel at a time! So, what’s the hold-up? Jump in, and let’s make some cosmic magic happen!
+        </p>
+    </section>
+
+    <section id="services" class="skills-section">
+        <h2>Our Stellar Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h3>Prompt Master</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Launch Your Future</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150?text=Neon+Portfolio" alt="Neon Portfolio">
+                <h3>Starlight Portfolio</h3>
+                <p>Showcase your skills with a sleek, neon-powered website built using HTML and CSS. Shine bright and inspire!</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150?text=Dynamic+App" alt="Dynamic App">
+                <h3>Cosmic Chat</h3>
+                <p>Connect the galaxy with a vibrant JavaScript chat app. Spark conversations and ignite innovation!</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150?text=AI+Vision" alt="AI Vision">
+                <h3>Idea Igniter</h3>
+                <p>Unleash creativity with an AI prompt generator, crafted to fuel your next big breakthrough!</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150?text=Space+Game" alt="Space Game">
+                <h3>Orbit Runner</h3>
+                <p>Race through the stars in a thrilling JavaScript game. Push limits and conquer the cosmos!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <h2>Glowing Reviews</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>This team turned my ideas into a neon masterpiece! Their creativity and tech skills are out of this world!</p>
+                <h3>Alex Nova</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Their JavaScript magic made my app a cosmic hit! Fast, fun, and futuristic—absolutely stellar work!</p>
+                <h3>Sara Comet</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Idea Igniter sparked my creativity like never before! Their AI prompts are pure genius!</p>
+                <h3>Raj Starlight</h3>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Orbit Runner is addictive and epic! Their game dev skills are a galactic win!</p>
+                <h3>Emma Nebula</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>Email: contact@neonfuture.com</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Connect with Us</h3>
+                <p>Email: contact@neonfuture.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Cosmic Lane, Neon City</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Neon Future. Powered by <span>Cosmic Creativity</span>.</p>
+        </div>
+    </footer>
+
+    <script>// Smooth scrolling for navigation links
+document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+        // Close mobile menu after clicking
+        document.querySelector('nav').classList.remove('active');
+        document.querySelector('.menu-toggle i').classList.remove('fa-times');
+        document.querySelector('.menu-toggle i').classList.add('fa-bars');
+    });
+});
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.background = 'linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(20, 20, 20, 1))';
+        header.style.boxShadow = '0 0 25px rgba(0, 255, 204, 0.7)';
+    } else {
+        header.style.background = 'linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.9))';
+        header.style.boxShadow = 'none';
+    }
+});
+
+// Mobile menu toggle
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    const nav = document.querySelector('nav');
+    const toggleIcon = document.querySelector('.menu-toggle i');
+    nav.classList.toggle('active');
+    if (nav.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-bars');
+        toggleIcon.classList.add('fa-times');
+    } else {
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-bars');
+    }
+});</script>
+</body>
+</html>
